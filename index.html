@@ -2,113 +2,131 @@
 <html lang="pt-BR">
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frase do Dia</title>
-  <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-image:
-            linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-            url('pordosol.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        color: #fff;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frase do Dia</title>
 
-    .container {
-        background: transparent;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 25px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        padding: 40px;
-        width: 100%;
-        max-width: 700px;
-        text-align: center;
-    }
+<!-- FONTE MAIS FORTE E MODERNA -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<style>
+
+:root {
+    --btn-largura: 160px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* CONTAINER */
+.container {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* TÍTULO MAIS BOLD */
+h1 {
+    font-size: 2.5rem;
+    color: #ffd27a;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+#data {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+#frase-do-dia {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+/* BOTÃO */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: var(--btn-largura);
+    font-weight: 600;
+}
+
+/* TEXTO CRÉDITO */
+.credito-texto {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffffcc;
+    letter-spacing: 1px;
+}
+
+/* IMAGEM NO LUGAR DO QUADRADO */
+.imagem-credito {
+    width: var(--btn-largura);
+    height: var(--btn-largura);
+    margin-top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
     h1 {
-        font-size: 2.8rem;
-        color: #ffd27a;
-        margin-bottom: 20px;
-        font-weight: 700;
-        text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    }
-
-    #data {
-        font-size: 1.2rem;
-        color: #f0f0f0;
-        margin-bottom: 30px;
-        font-style: italic;
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        font-size: 2rem;
     }
 
     #frase-do-dia {
-        font-size: 1.7rem;
-        color: #ffffff;
-        font-weight: 500;
-        line-height: 1.8;
-        text-align: center;
-        margin: 20px 0;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        font-size: 1.2rem;
     }
+}
 
-    button {
-        margin-top: 25px;
-        padding: 12px 30px;
-        font-size: 16px;
-        cursor: pointer;
-        background: rgba(255, 210, 122, 0.9);
-        color: #333;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-
-    button:hover {
-        transform: scale(1.05);
-        background: rgba(255, 220, 150, 1);
-    }
-
-    @media (max-width: 480px) {
-        h1 {
-            font-size: 2rem;
-        }
-
-        #frase-do-dia {
-            font-size: 1.3rem;
-        }
-
-        .container {
-            padding: 25px;
-        }
-    }
 </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Frase do Dia</h1>
-        <p id="data"></p>
-        <p><strong id="frase-do-dia"></strong></p>
-        <button onclick="fecharPagina()">Fechar</button>
-    </div>
 
-    <script>
-        // Lista de frases para os primeiros dias
-        const frases = [
-            "Eu sou capaz de alcançar tudo o que eu quero.",
+<body>
+
+<div class="container">
+    <h1>Frase do Dia</h1>
+    <p id="data"></p>
+    <p><strong id="frase-do-dia"></strong></p>
+    <button onclick="fecharPagina()">Fechar</button>
+</div>
+
+<!-- CRÉDITO + IMAGEM -->
+<div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
+
+<img class="imagem-credito" src='logo.png alt="Crédito">
+
+<script>
+const frases = [
+    "Eu sou capaz de alcançar tudo o que eu quero.",
 "Eu sou grato pelas pequenas coisas da vida.",
 "Eu sou capaz de encontrar a solução para qualquer problema.",
 "Aproveite o dia!",
@@ -162,9 +180,6 @@
 "A maior batalha que enfrentamos na vida é a batalha interior - domine sua mente e controle suas emoções.",
 "O perdão é uma das maiores virtudes que podemos cultivar.",
 "A vida é uma aventura incrível - saia da sua zona de conforto.",
-"A maior batalha que enfrentamos na vida é a batalha interior - domine sua mente e controle suas emoções.",			
-"O perdão é uma das maiores virtudes que podemos cultivar.",
-"A vida é uma aventura incrível - saia da sua zona de confort",
 "A vida é uma oportunidade para crescer e evoluir - abrace os desafios e supere-os.",
 "O que você planta hoje, colherá amanhã - plante boas sementes e colherá bons frutos.",
 "A mudança é inevitável - aprenda a abraçá-la e crescer com ela.",
@@ -197,7 +212,7 @@
 "A mudança pode ser desconfortável, mas também pode ser libertadora.",
 "A vida é uma jornada de autoaceitação - ame a si mesmo exatamente como você é.",
 "A verdadeira paz interior vem de deixar ir o que não serve mais em nossa vida.",
-"A vida é uma jornada para encontrar nossa própria voz e usá-la",
+"A vida é uma jornada para encontrar nossa própria voz e usá-la.",
 "A felicidade é uma escolha - escolha cultivá-la em sua vida todos os dias.",
 "A vida é uma oportunidade para aprender e crescer - esteja aberto às lições da vida.",
 "A autodisciplina é a chave para alcançar seus objetivos e sonhos.",
@@ -288,7 +303,7 @@
 "A vida é uma jornada para encontrar um senso de significado e propósito em sua vida familiar.",
 "A atenção plena é a chave para estar presente e apreciar o momento presente.",
 "A vida é uma oportunidade para se conectar com pessoas diferentes e aprender com suas experiências.",
-"A auto-exploração é a chave para encontrar suas paixões e interesses.",
+"A auto exploração é a chave para encontrar suas paixões e interesses.",
 "A vida é uma jornada para encontrar um senso de significado e propósito em sua vida espiritual.",
 "A confiança em si mesmo é a chave para realizar seus sonhos e objetivos.",
 "A vida é uma oportunidade para experimentar diferentes culturas e aprender com elas.",
@@ -298,7 +313,7 @@
 "A vida é uma oportunidade para enfrentar seus medos e desafios de frente.",
 "A autodisciplina é a chave para desenvolver hábitos saudáveis e alcançar seus objetivos.",
 "A vida é uma jornada para encontrar um senso de significado e propósito em seu ambiente social.",
-"A humildade é a chave para ser grato e apreciar o que você.",
+"A humildade é a chave para ser grato e apreciar o que você tem.",
 "A vida é uma oportunidade para viver no momento presente e apreciar as pequenas coisas da vida.",
 "A gratidão é a chave para ser feliz e realizado com o que você tem.",
 "A vida é uma jornada para encontrar um senso de significado e propósito em sua comunidade.",
@@ -361,7 +376,7 @@
 "A autodisciplina é a chave para manter hábitos saudáveis e alcançar metas a longo prazo.",
 "A vida é uma oportunidade para praticar a bondade e fazer a diferença na vida dos outros.",
 "A empatia é a chave para se conectar com as emoções e sentimentos dos outros.",
-"A vida é uma jornada para encontrar um equilíbrio saudável entre ser independente e receber apoio de outras.",
+"A vida é uma jornada para encontrar um equilíbrio saudável entre ser independente e receber apoio de outras pessoas.",
 "A gratidão é a chave para reconhecer as bênçãos em sua vida e apreciá-las.",
 "A vida é uma oportunidade para se reconectar com a natureza e encontrar paz e tranquilidade.",
 "A compaixão é a chave para tratar os outros com bondade e respeito.",
@@ -444,7 +459,7 @@
 "A vida é uma jornada para encontrar um senso de significado e propósito em suas atividades de lazer e hobbies.",
 "A coragem é a chave para enfrentar seus medos e tomar medidas ousadas.",
 "A vida é uma oportunidade para criar relacionamentos significativos e duradouros.",
-"A auto-reflexão é a chave para aprender com seus erros e tomar decisões melhores no futuro.",
+"A autorreflexão é a chave para aprender com seus erros e tomar decisões melhores no futuro.",
 "A vida é uma jornada para encontrar um equilíbrio saudável entre a sua vida social e pessoal.",
 "A capacidade de se adaptar às mudanças é a chave para lidar com os altos e baixos da vida.",
 "A vida é uma oportunidade para abraçar a simplicidade e viver com menos.",
@@ -465,45 +480,82 @@
 "A habilidade de aceitar e abraçar a mudança é a chave para crescer e evoluir como pessoa.",
 "A vida é uma oportunidade para deixar sua marca no mundo e criar um legado duradouro.",
 "A empatia é a chave para construir relacionamentos fortes e apoiar os outros em tempos de necessidade.",
-    "Persista, nao desista. Você chegou até aqui, a vitória pode estar depois do proximo obstáculo.",
-    "Lembre-se: Todo seu esforço é um investimento em você e não uma perda de tempo.",
-    "Uma macieira dá maçãs, figueiras dão figos. Não queira resultados diferentes agindo da mesma maneira em tudo.",
-    "Antes de perdoar o próximo, aprenda a perdoar a si mesmo. Todos erram e voce também tem direito de errar.",
-    "Aceite errar, mas jamais admita errar sempre.",
-    "Mesmo uma árvore, aparentemente parada, tem sua luta diária na busca de água.",
-    "Até uma árvore trabalha para alimentar o próximo.",
-    "Melhor ser enganado do que ser o enganador. Faça tudo o que quiser mas o faça honestamente." 
-        ];
+"Persista, não desista. Você chegou até aqui, a vitória pode estar depois do próximo obstáculo.",
+"Lembre-se: todo seu esforço é um investimento em você e não uma perda de tempo.",
+"Uma macieira dá maçãs, figueiras dão figos. Não queira resultados diferentes agindo da mesma maneira em tudo.",
+"Antes de perdoar o próximo, aprenda a perdoar a si mesmo. Todos erram e você também tem direito de errar.",
+"Aceite errar, mas jamais admita errar sempre.",
+"Mesmo uma árvore, aparentemente parada, tem sua luta diária na busca de água.",
+"Até uma árvore trabalha para alimentar o próximo.",
+"Melhor ser enganado do que ser o enganador. Faça tudo o que quiser, mas o faça honestamente.",
+"A vida é uma oportunidade para acreditar mais em si mesmo.",
+"Cada novo amanhecer traz consigo novas possibilidades.",
+"A força que você procura já existe dentro de você.",
+"Grandes conquistas começam com pequenos passos.",
+"A esperança ilumina os caminhos mais difíceis.",
+"Você é mais forte do que imagina.",
+"Não tenha medo de recomeçar quantas vezes forem necessárias.",
+"Cada desafio vencido fortalece seu caráter.",
+"A bondade transforma tanto quem recebe quanto quem oferece.",
+"A felicidade cresce quando é compartilhada.",
+"Valorize o presente, pois ele é o único momento que realmente possui.",
+"A calma é uma forma de sabedoria.",
+"Os sonhos se realizam quando são acompanhados de ação.",
+"Seu potencial é maior do que seus medos.",
+"A persistência abre portas que a pressa não consegue abrir.",
+"Acredite no processo do seu crescimento.",
+"Todo dia é uma nova chance de fazer diferente.",
+"Você não precisa ser perfeito para ser valioso.",
+"A gratidão muda a forma como enxergamos a vida.",
+"Cada experiência traz uma lição importante.",
+"O amor próprio é o início de uma vida equilibrada.",
+"A paz interior vale mais do que qualquer conquista material.",
+"Aprenda a celebrar cada pequena vitória.",
+"A coragem cresce toda vez que você enfrenta seus medos.",
+"Seu valor não depende da opinião dos outros.",
+"A simplicidade revela as maiores riquezas da vida.",
+"Permita-se crescer sem se comparar com ninguém.",
+"A paciência transforma espera em aprendizado.",
+"O respeito é uma semente que produz bons relacionamentos.",
+"A confiança é construída com pequenas atitudes diárias.",
+"Seja a luz que você gostaria de encontrar nos outros.",
+"A vida recompensa aqueles que continuam caminhando.",
+"Cada obstáculo superado se torna parte da sua força.",
+"O bem que você faz retorna de maneiras inesperadas.",
+"A sabedoria nasce da experiência e da reflexão.",
+"Seu coração conhece caminhos que a razão ainda não compreendeu.",
+"A gentileza é uma linguagem compreendida por todos.",
+"Quando você muda seus pensamentos, muda sua realidade.",
+"A felicidade pode ser encontrada nos momentos mais simples.",
+"Não existe crescimento sem transformação.",
+"Você tem a capacidade de criar uma vida significativa.",
+"Acredite: coisas boas também estão a caminho.",
+];
 
-        // Função que pega o dia do ano
-        function obterDiaDoAno() {
-            const hoje = new Date();
-            const inicioDoAno = new Date(hoje.getFullYear(), 0, 0);
-            const diff = hoje - inicioDoAno;
-            const umDia = 1000 * 60 * 60 * 24;
-            return Math.floor(diff / umDia);
-        }
+function obterDiaDoAno() {
+    const hoje = new Date();
+    const inicioDoAno = new Date(hoje.getFullYear(), 0, 0);
+    const diff = hoje - inicioDoAno;
+    const umDia = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / umDia);
+}
 
-        // Atualiza o conteúdo da página com a data e a frase do dia
-        function atualizarFraseDoDia() {
-            const diaDoAno = obterDiaDoAno();
-            const frase = frases[diaDoAno - 1] || "Frase não definida para este dia.";
-            const hoje = new Date();
-            
-            document.getElementById("data").textContent = `Hoje é ${hoje.toLocaleDateString()}.`;
-            document.getElementById("frase-do-dia").textContent = frase;
-        }
+function atualizarFraseDoDia() {
+    const diaDoAno = obterDiaDoAno();
+    const frase = frases[diaDoAno - 1] || "Frase não definida para este dia.";
+    const hoje = new Date();
 
-        // Inicializa a frase do dia ao carregar a página
-        atualizarFraseDoDia();
+    document.getElementById("data").textContent = `Hoje é ${hoje.toLocaleDateString()}.`;
+    document.getElementById("frase-do-dia").textContent = frase;
+}
 
-        // Função para fechar a página e limpar do histórico
-        function fecharPagina() {
-            window.location.replace("about:blank");
-            setTimeout(() => {
-                window.close();
-            }, 100);
-        }
-    </script>
+atualizarFraseDoDia();
+
+function fecharPagina() {
+    window.location.replace("about:blank");
+    setTimeout(() => window.close(), 100);
+}
+</script>
+
 </body>
 </html>
