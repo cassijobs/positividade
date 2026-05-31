@@ -86,22 +86,31 @@
                 font-size: 1.2rem;
             }
         }
-/* IMAGEM NO LUGAR DO QUADRADO */
-.imagem-credito {
-    width: var(--btn-largura);
-    height: var(--btn-largura);
-    margin-top: 10px;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+.credito-area {
+    position: fixed;
+    bottom: 20px; /* empurra para perto do rodapé */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
-/* RESPONSIVO */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
+/* TEXTO */
+.credito-texto {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
 
+/* QUADRADO PEQUENO */
+.quadrado {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 210, 122, 0.9);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin: 0 auto;
+}
     </style>
 </head>
 <body>
@@ -112,7 +121,10 @@
         <button onclick="fecharPagina()">Fechar</button>
     </div>
 
-<div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
+<div class="credito-area">
+    <div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
+    <div class="quadrado"></div>
+</div>
 <img class="imagem-credito" src="logo.png" alt="Crédito">
 
     <script>
