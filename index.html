@@ -87,20 +87,26 @@
             }
         }
 /* IMAGEM NO LUGAR DO QUADRADO */
-.imagem-credito {
-    width: 80PX;
-    height: 80PX;
-    margin-top: 10px;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0);
+:root {
+    --quadrado-tamanho: 120px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 50px) {
-    h1 {
-        font-size: 2rem;
+/* QUADRADO RESPONSIVO */
+.quadrado {
+    width: var(--quadrado-tamanho);
+    height: var(--quadrado-tamanho);
+    background: rgba(255, 210, 122, 0.9);
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* AJUSTE AUTOMÁTICO PARA CELULAR */
+@media (max-width: 480px) {
+    :root {
+        --quadrado-tamanho: 80px;
     }
+}
 
     </style>
 </head>
