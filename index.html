@@ -87,26 +87,20 @@
             }
         }
 /* IMAGEM NO LUGAR DO QUADRADO */
-:root {
-    --quadrado-tamanho: 120px;
-}
-
-/* QUADRADO RESPONSIVO */
-.quadrado {
-    width: var(--quadrado-tamanho);
-    height: var(--quadrado-tamanho);
-    background: rgba(255, 210, 122, 0.9);
-    border-radius: 10px;
+.imagem-credito {
+    width: var(--btn-largura);
+    height: var(--btn-largura);
     margin-top: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* AJUSTE AUTOMÁTICO PARA CELULAR */
+/* RESPONSIVO */
 @media (max-width: 480px) {
-    :root {
-        --quadrado-tamanho: 80px;
+    h1 {
+        font-size: 2rem;
     }
-}
 
     </style>
 </head>
@@ -119,7 +113,6 @@
     </div>
 
 <div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
-
 <img class="imagem-credito" src="logo.png" alt="Crédito">
 
     <script>
