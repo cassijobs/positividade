@@ -2,20 +2,14 @@
 <html lang="pt-BR">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frase do Dia</title>
-
-<style>
-
-:root {
-    --btn-largura: 160px;
-}
-
-/* Página */
-body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase do Dia</title>
+    <style>
+        /* Estilos para a página inteira */
+        body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('pordosol.jpg);
+    background-image: url('pordosol.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -40,7 +34,8 @@ body {
     text-align: center;
 }
 
-h1 {
+        /* Estilo para o título */
+       h1 {
     font-size: 2.5rem;
     color: #ffd27a;
     margin-bottom: 20px;
@@ -48,79 +43,60 @@ h1 {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
 }
 
-#data {
-    font-size: 1.2rem;
-    color: #f5f5f5;
-    margin-bottom: 30px;
-    font-style: italic;
-}
+        /* Estilo para a data */
+        #data {
+            font-size: 1.2rem;
+            color: #f5f5f5;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
 
-#frase-do-dia {
+        /* Estilo para a frase */
+        #frase-do-dia {
     color: white;
     font-size: 1.6rem;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
-/* Botão */
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4e73df;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    width: var(--btn-largura);
-}
+        /* Estilo para o botão */
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
 
-/* TEXTO ACIMA DO QUADRADO */
-.credito-texto {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #000;
-    letter-spacing: 1px;
-    text-align: center;
-}
-/* IMAGEM NO LUGAR DO QUADRADO */
-.imagem-credito {
-    width: var(--btn-largura);
-    height: var(--btn-largura);
-    margin-top: 10px;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
+        button:hover {
+            background-color: #375ac8;
+        }
 
-/* RESPONSIVO */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-    #frase-do-dia {
-        font-size: 1.2rem;
-    }
-}
+        /* Responsividade */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
 
-</style>
+            #frase-do-dia {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>Frase do Dia</h1>
+        <p id="data"></p>
+        <p><strong id="frase-do-dia"></strong></p>
+        <button onclick="fecharPagina()">Fechar</button>
+    </div>
 
-<div class="container">
-    <h1>Frase do Dia</h1>
-    <p id="data"></p>
-    <p><strong id="frase-do-dia"></strong></p>
-    <button onclick="fecharPagina()">Fechar</button>
-</div>
-
-<!-- CRÉDITO + IMAGEM -->
-<div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
-
-<img class="imagem-credito" src='logo.png' alt="Crédito">
-
-<script>
-const frases = [
+    <script>
+        // Lista de frases para os primeiros dias
+        const frases = [
     "Eu sou capaz de alcançar tudo o que eu quero.",
 "Eu sou grato pelas pequenas coisas da vida.",
 "Eu sou capaz de encontrar a solução para qualquer problema.",
