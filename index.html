@@ -127,6 +127,18 @@
     display: block;
     margin: 0 auto;
 }
+
+    /* Impede seleção de texto */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+}
+    
+    
     </style>
 </head>
 <body>
@@ -147,6 +159,10 @@
 
 
     <script>
+ document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+    });
+        
         // Lista de frases para os primeiros dias
         const frases = [
     "Eu sou capaz de alcançar tudo o que eu quero.",
