@@ -141,31 +141,29 @@
     <div class="credito-texto">CRIADO E PRODUZIDO POR:</div>
    <img class="credito-img" src="logo.png" alt="Crédito">
 </div>
- // ==========================
-    // PROTEÇÕES BÁSICAS
-    // ==========================
 
-    // Bloqueia clique direito
+
+    
     document.addEventListener("contextmenu", function(e){
         e.preventDefault();
     });
 
-    // Bloqueia copiar
+   
     document.addEventListener("copy", function(e){
         e.preventDefault();
     });
 
-    // Bloqueia recortar
+  
     document.addEventListener("cut", function(e){
         e.preventDefault();
     });
 
-    // Bloqueia arrastar
+   
     document.addEventListener("dragstart", function(e){
         e.preventDefault();
     });
 
-    // Bloqueia atalhos comuns
+   
     document.addEventListener("keydown", function(e){
 
         if (e.key === "F12") {
@@ -188,7 +186,7 @@
         return true;
     });
 
-    // Detecta DevTools (não é infalível)
+    
     let devtools = false;
 
     setInterval(function () {
